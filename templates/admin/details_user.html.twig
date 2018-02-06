@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Détails de l'utilisateur {{user.firstname}} {{user.lastname}} {% endblock %}
+
+{% block body %}
+    
+    <h1>Détails de l'utilisateur {{user.firstname}} {{user.lastname}}</h1>
+    
+    <h2>Liste des produits</h2>
+    
+    <ul>
+        {% for product in user.products %}    
+            <li> {{ product.name }} </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
