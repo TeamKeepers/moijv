@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste des produits{% endblock %}
+{% block body %}
+
+    <h1>Bienvenue sur la liste des produits</h1>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - {{ product.description }} - 
+                {% for tag in product.tags %}
+                    <a href="{{ path('list_product_by_tag', { name: tag.name }) }}">#{{ tag.name }}</a>
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -23,6 +23,8 @@ class ProductFixture extends Fixture implements DependentFixtureInterface
             $product->setUser($user);
             
             $manager->persist($product);
+            
+            $this->addReference('product'.$i, $product);
         }
         $manager->flush();
         
