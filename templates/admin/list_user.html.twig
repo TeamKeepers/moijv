@@ -13,6 +13,7 @@
             <li>
                 {# <?= htmlspecialchars($user->getFirstname()); ?> #}
                 {{ user.firstname }} {{ user.lastname }}
+                <a href="{{ path('user_details', { id: user.id }) }}">Détails</a>
             </li>
             {# <?php endforeach; ?> #}
         {% endfor %}
