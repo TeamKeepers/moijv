@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Index;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\Constraints as CustomAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -23,23 +25,28 @@ class Product {
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Length(min=2, max=100)
      * @var string
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(min=10, max=2000)
+     * @CustomAssert\BadWord(badwords={"crotte", "zut"})
      * @var string
      */
     private $description;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Image(minWidth=300, maxHeight=300, maxSize="1024k")
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\Choice({"very bad", "bad", "average", "good", "very good"})
      * @var string
      */
     private $state;
