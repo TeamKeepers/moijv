@@ -6,3 +6,4 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /nbproject/
+/public/uploads/

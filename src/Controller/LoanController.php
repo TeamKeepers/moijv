@@ -33,13 +33,15 @@ class LoanController extends Controller
             $image = $product->getImage();
             $fileName = md5(uniqid()).'.'.$image->guessExtension(); // guessExtension pour déduire quel produit on lui envoit et ainsi éviter qu'on nous envoit du PHP
            // procédural: move_uploaded_file
-            $image->move('uploads/product', $fileName);
+            $image->move('public/uploads/product', $fileName);
             $product->setImage($fileName);
             $product->setUser($this->getUser());
             
             // Enregistre produit dans BDD
             $manager->persist($product);
             $manager->flush();
+            
+            return $this->redirectToRoute('my_products');
             
             
         }

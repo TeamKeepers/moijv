@@ -9,8 +9,12 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="{{ path('list_product') }}">Les produits</a></li>
+                    <li><a href="{{ path('list_product') }}">Tous les produits</a></li>
                     <li><a href="{{ path('list_user') }}">Les utilisateurs</a></li>
+                    {% if is_granted('ROLE_USER') %} {# vérif des permissions de l'utilisateurs #}
+                        <li><a href="{{ path('my_product') }}">Mes produits</a></li>
+                        <li><a href="{{ path('add_product') }}">Ajouter un produit</a></li>
+                    {% endif %}
                 </ul>
             </nav> 
         </header>
