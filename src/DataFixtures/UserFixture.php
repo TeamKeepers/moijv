@@ -11,6 +11,15 @@ class UserFixture extends Fixture
     //put your code here
     public function load(ObjectManager $manager) 
     {
+        // On créé un admin pour accèder à notre backoffice
+        $admin = new User();
+        $admin->setRoles('ROLE_USER|ROLE_ADMIN');
+        $admin->setUsername('root');
+        $admin->setPassword(password_hash('root', PASSWORD_BCRYPT));
+        $admin->setEmail('admin@noreply.com');
+        $admin->setBirthdate(\DateTime::createFromFormat('Y/m/d h:i:s', '1989/01/01 00:00:00'));
+        $manager->persist($admin);
+        
         // on créé une liste factice de 20 utilisateurs
         for ($i = 1; $i <= 20; $i++) {
             $user = new User();
@@ -18,6 +27,7 @@ class UserFixture extends Fixture
             $user->setEmail('user'.$i.'@mail.com');
             $user->setFirstname('user'.$i);
             $user->setLastname("Fake");
+            $user->setRoles('ROLE_USER');
             $user->setPassword(password_hash('user'.$i, PASSWORD_BCRYPT));
             $user->setBirthdate(\DateTime::createFromFormat('Y/m/d h:i:s', (2000 - $i).'/01/01 00:00:00')
             );

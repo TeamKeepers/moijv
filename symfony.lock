@@ -143,6 +143,9 @@
             "ref": "cc1afd81841db36fbef982fe56b48ade6716fac4"
         }
     },
+    "symfony/form": {
+        "version": "v4.0.4"
+    },
     "symfony/framework-bundle": {
         "version": "3.3",
         "recipe": {
@@ -158,6 +161,12 @@
     "symfony/http-kernel": {
         "version": "v4.0.4"
     },
+    "symfony/inflector": {
+        "version": "v4.0.4"
+    },
+    "symfony/intl": {
+        "version": "v4.0.4"
+    },
     "symfony/lts": {
         "version": "4-dev"
     },
@@ -170,8 +179,14 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/options-resolver": {
+        "version": "v4.0.4"
+    },
     "symfony/orm-pack": {
         "version": "v1.0.5"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.7.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.7.0"
@@ -182,6 +197,9 @@
     "symfony/profiler-pack": {
         "version": "v1.0.3"
     },
+    "symfony/property-access": {
+        "version": "v4.0.4"
+    },
     "symfony/routing": {
         "version": "4.0",
         "recipe": {
@@ -191,8 +209,29 @@
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
     },
+    "symfony/security": {
+        "version": "v4.0.4"
+    },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "03f21d01e3f41a095a43e0e7b2f7fbd9dbd33cf8"
+        }
+    },
     "symfony/stopwatch": {
         "version": "v4.0.4"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bcd6c570c017ea6ae5a7a6a027c929fd3542cd8"
+        }
     },
     "symfony/twig-bridge": {
         "version": "v4.0.4"
@@ -205,6 +244,9 @@
             "version": "3.3",
             "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
         }
+    },
+    "symfony/validator": {
+        "version": "v4.0.4"
     },
     "symfony/var-dumper": {
         "version": "v4.0.4"

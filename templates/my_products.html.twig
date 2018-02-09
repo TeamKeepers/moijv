@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mes produits{% endblock %}
+
+{% block body %}
+
+    <h1>Mes produits</h1>
+    <ul>
+        {% for product in app.user.products %}
+            <li> {{ product.name }} </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
